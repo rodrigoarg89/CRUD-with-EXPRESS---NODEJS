@@ -4,21 +4,21 @@ const app = express()
 
 //const userDB = []; //BASE DE DATOS VACIA
 
-const userDB = [{
-    "id": 1,
-    "name": "",
-    "age": 20,
-    "email": "",
-    "country": "",
-    "phone": ""
-}, {
-    "id": 2,
-    "name": "",
-    "age": 20,
-    "email": "",
-    "country": "",
-    "phone": ""
-}]
+// const userDB = [{ lo comnatamos ya que lo estamos haciendo ya en users.controllers
+//     "id": 1,
+//     "name": "",
+//     "age": 20,
+//     "email": "",
+//     "country": "",
+//     "phone": ""
+// }, {
+//     "id": 2,
+//     "name": "",
+//     "age": 20,
+//     "email": "",
+//     "country": "",
+//     "phone": ""
+// }]
 
 
 
@@ -64,6 +64,23 @@ app.post('/users', (req, res) => {
         res.status(201).json(userDB)
     })
 
+    //controlador MVC
+    const createUser = (userObj) => {
+        if(userDB,length === 0) {
+            const newUser = {
+                id: 1,
+                ...data,
+            }; 
+            userDB.push(newUser)
+        } else {
+            const newUser = {
+                id: userDB[userDB.length-1].id + 1,
+                ...data,
+            }
+            userDB.push(newUser);
+        }
+    }
+    
 //todo: Delete Udate  ambos requieren un id
 
 app.delete('/users/:id', (req, res) => {
