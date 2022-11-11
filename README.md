@@ -8,9 +8,9 @@
     
     La ruta /users/:id
     -GET (obtener un usuario especifico)
-    -PUT (editat un usuario)
-    -PATCH (editar un usaurio)
-    -DELETE (eliminar un usaurio)
+    -PUT (editar un usuario)
+    -PATCH (editar un usuario)
+    -DELETE (eliminar un usuario)
 
 3. Crear los controladores
 ```    javascript
