@@ -48,7 +48,9 @@ const deleteUser = (id) => {
     const index = userDB.findIndex(item => item.id === id)
     if(index !== -1) {
         userDB.splice(index, 1)
+        // return true
     }
+        // return false
         return userDB
     }
 
